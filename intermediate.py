@@ -244,8 +244,114 @@ def Function():
 #
 # print(sub(10,4))
 
+# ## CREATING A Duplicate List Elements Remover Function
+# lst = [12,12,3,44,56,99,12,3,44]
+#
+# def remove_dup(l):
+#     unique = set(l)
+#     u = list(unique)
+#     u.sort()
+#     return u
+#
+# print(lst)
+# print(remove_dup(lst))
 
 
+## Redefined built-in function 'type'
+# print(type('String'))
+
+# def type_dt(data):
+#     dt = str(type(data))
+#     if 'str' in dt:
+#         print('string')
+#     elif 'int' in dt:
+#         print('Integer')
+#     elif 'float' in dt:
+#         print('Floating Point Number')
+#     elif 'complex' in dt:
+#         print('Complex Number')
+#
+# # print(type('Str'))
+# type_dt(34)
+# print(type(34))
+
+
+## FUNCTION to smartly round decimal places in an addition operation
+
+# def sum_r(*n):
+#     sm = 0
+#     d= []
+#     for num in n:
+#         sm += num
+#         Num = str(num).split('.')
+#         d.append(len(Num[1]))
+#     min_d = min(d)
+#     return round(sm, min_d)
+
+
+# Exercising it my own way
+# def sum_round(*a):
+#     sum = 0
+#     dec = []
+#
+#     for num in a:
+#         sum += num
+#         k = str(num).split('.')
+#         dec.append(len(k[1]))
+#         mdec = min(dec)
+#     result = round(sum, mdec)
+#     return result
+#
+# print(sum_round(54.231, 3.1948, 22.9, 3.14282))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+# print(sum_r(12.56, 12.848, 11.1567, 90.007))
+
+# def checksm(val):
+#     g = str(val).split(';')
+#     print(g[0])
+#
+# checksm('ab  ; these are alphabets')
 
 
 
