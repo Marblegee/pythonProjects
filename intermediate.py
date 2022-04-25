@@ -305,6 +305,90 @@ def Function():
 # print(sum_round(54.231, 3.1948, 22.9, 3.14282))
 
 
+### EXERCISES ###
+
+# Str1 = 'Desserts'
+# Str2 = "Live"
+# Str3 = 'Pals'
+# Str4 = 'God'
+# Str5 = 'Raw'
+#
+# def str_rev(st):
+#     stg = str(st).lower()
+#     stg = stg[::-1]
+#     stg = stg.capitalize()
+#     print(st, ':', stg)
+# str_rev(Str1)
+# str_rev(Str2)
+# str_rev(Str3)
+# str_rev(Str4)
+# str_rev(Str5)
+
+# ## 2ND EXERCISE
+#
+# # Hint : Use dictionary
+# guest_1 = 'jake'
+# guest_2 = 'tamra'
+# guest_3 = 'Ted'
+#
+# guests = {
+#     'John': 'A011',
+#     'Kyle': 'A009',
+#     'Jake': 'BQ02',
+#     'Tamra': 'A015',
+#     'Josh': 'BQ13'
+# }
+#
+#
+# def get_key(rnd_name):
+#     rnd_name = str(rnd_name).capitalize()
+#     if rnd_name in guests.keys():
+#         print('Key :', guests[rnd_name])
+#     else:
+#         print("Not Registered")
+# get_key(guest_1)
+# get_key(guest_2)
+# get_key(guest_3)
+
+
+
+#######     PYTHON CLASSES       ########
+
+# class Coder():
+#     def __init__(self, name):
+#         self.Name = name
+#
+# cd = Coder('Jake')
+# print(cd.Name)
+
+
+
+class Coder():
+    def __init__(self, name):
+        self.Name = name
+    def info(self):
+        print(self.Name)
+    def is_pythonner(self):
+        if 'Python' in self.language:
+            print(True)
+        else:
+            print(False)
+
+cd = Coder('Jake')
+cd.info()
+
+## Adding attributes to class outside of the class
+
+cd.language = ['Python', 'C'] # modify class identifiers or attributes in python
+print(cd.language)
+# cd.is_pythonner()
+del(cd.language) # delete class attributes
+print(cd.language)
+
+
+
+
+
 
 
 
