@@ -363,69 +363,152 @@ def Function():
 
 
 
-class Coder():
-    def __init__(self, name):
-        self.Name = name
-    def info(self):
-        print(self.Name)
-    def is_pythonner(self):
-        if 'Python' in self.language:
-            print(True)
-        else:
-            print(False)
-
-cd = Coder('Jake')
-cd.info()
-
-## Adding attributes to class outside of the class
-
-cd.language = ['Python', 'C'] # modify class identifiers or attributes in python
-print(cd.language)
-# cd.is_pythonner()
-del(cd.language) # delete class attributes
-print(cd.language)
-
-
+# class Coder():
+#     def __init__(self, name):
+#         self.Name = name
+#     def info(self):
+#         print(self.Name)
+#     def is_pythonner(self):
+#         if 'Python' in self.language:
+#             print(True)
+#         else:
+#             print(False)
+#
+# cd = Coder('Jake')
+# cd.info()
+#
+# ## Adding attributes to class outside of the class
+#
+# cd.language = ['Python', 'C'] # modify class identifiers or attributes in python
+# print(cd.language)
+# # cd.is_pythonner()
+# del(cd.language) # delete class attributes
+# print(cd.language)
 
 
+# #### CLASS VARIABLES
+#
+# class Python():
+#     a_name = 15
+#     _aage = 20
+#     __key = 90  ## This is a Strongly Private variable
+#     def __init__(self):
+#         self.name = 10 # this is a class variable
+#         _age = 17 #private variable, not accessible outside the class
+#     def python_code(self):
+#         print('Coding')
+#
+# py = Python()
+# print(py.name)
+# print(py.a_name)
+# # print(py._age)
+# print(py._aage)
+# # print(py.__key)
+# py.python_code()
 
 
+# #### FUNCTIONS VS CLASS METHODS
+#
+# class Coder():
+#     def __init__(self,name):
+#         self.name = name
+#     def get_lang(self, lang):
+#         self.lang = lang
+#
+# cd = Coder("Jake")
+# cd.get_lang(['Python', 'C'])
+# print(cd.lang)
+#
+# def is_pythonner(lst):
+#     if 'Python' in lst:
+#         print(True)
+#     else:
+#         print(False)
+#
+# is_pythonner(cd.lang)
 
 
+#### Operator Overloading
+
+# class Algebra():
+#     def __init__(self, r = 0.0, i = 0.0):
+#         self.real = r
+#         self.imag = i
+#     def __add__(self, y):
+#         self.real = self.real + y.real
+#         self.imag = self.imag + y.imag
+#         return self
+#     def sho_val(self):
+#         print(self.real, self.imag)
+#
+# num1 = Algebra(2.5, 6.25)
+# num2 = Algebra(1.45, 3.35)
+# num3 = num1 + num2
+# # print(num.real)
+# num3.sho_val()
+# print(num3.real, num3.imag)
 
 
+# class Numeric_Str():
+#     def __init__(self, Str = ''):
+#         self.Str = Str
+#     def __int__(self):
+#         return int(self.Str)
+#
+#
+# num = Numeric_Str('1024')
+# pro = int(num.Str)*2
+# print(pro)
 
 
+# class SumPair():
+#     def __init__(self, lst):
+#         self.List = lst
+#         self.List_len = len(lst)
+#         self.i1 = 0
+#         self.i2 = 1
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         pass
+#     def __next__(self):
+#         if self.i2 == self.List_len:
+#             raise StopIteration
+#         else:
+#             self.sum_pair = self.List[self.i1] + self.List[self.i2]
+#             self.i1 += 1
+#             self.i2 += 1
+#             return self.sum_pair
+#
+# l = SumPair([12,44,56,78,12,33])
+# for ele in l:
+#     print(ele)
 
 
+# class Algebra():
+#   def __init__(self, n = 0):
+#     self.val = n
+#   def incrse(self):
+#     self. val += 1
+#
+# num = Algebra()
+# num.incrse()
+# print(num.val)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### EXERCISES
+# class LenVal():
+#     def __init__(self, dt):
+#         self.dt = dt
+#     def sho_val(self):
+#         print(len(self.dt))
+#
+# lv1 = LenVal('Head')
+# lv1.sho_val()
+# lv2 = LenVal([1, 9, 4, 2, 6])
+# lv2.sho_val()
+# lv3 = LenVal((1, ))
+# lv3.sho_val()
 
 
 #
@@ -438,12 +521,65 @@ print(cd.language)
 # checksm('ab  ; these are alphabets')
 
 
+###### EXERCISE #######
+class Guest():
+    kys = ['A010', 'A012', 'A014', 'BQ01']
+    def __init__(self, name):
+        self.guestDT = {
+            'John' : 'A011',
+            'Kyle' : 'A009',
+            'Jake' : 'BQ02',
+            'Tamra': 'A015',
+            'Josh' : 'BQ03'
+        }
+        self.name = str(name)
+
+    def is_regd(self):
+            if self.name in self.guestDT.keys():
+                print('Registered')
+            else:
+                print('Not Registered')
+
+    def get_key(self):
+            if self.name in self.guestDT.keys():
+                print('Key :', self.guestDT[self.name])
+            else:
+                print('Not Registered')
+
+    def reg(self):
+            if len(self.kys) != 0:
+                self.guestDT.update({self.name : self.kys[-1]})
+                self.kys.pop()
+            else:
+                print('Sorry, no vacant rooms available')
+
+    def guest_status(self):
+            print(self.name)
 
 
+def lets_try(guest_name):
+    gg = Guest(guest_name)
+    if guest_name in gg.guestDT:
+        print(guest_name)
+        gg.is_regd()
+        gg.get_key()
+    elif guest_name not in gg.guestDT and len(gg.kys) !=0:
+        print(gg.name)
+        gg.is_regd()
+        gg.reg()
+        gg.get_key()
+    else:
+        print(gg.name)
+        gg.is_regd()
+        gg.reg()
 
-
-
-
+lets_try('Josh')
+lets_try('Hans')
+lets_try('Evan')
+lets_try('Kyle')
+lets_try('Ted')
+lets_try('Karl')
+lets_try('Sam')
 
 
 
